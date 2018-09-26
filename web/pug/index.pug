@@ -1,0 +1,25 @@
+doctype html
+html(lang='es')
+    head
+        title Tienda Harnina
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1, user-scalable=no')
+        link(type='text/css', rel='stylesheet', href='../css/catalogoEstilo.css')
+        link(href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet")
+    body
+        header.cabecera
+            a.subtitulo(href="catalogo.html") DAM: ACCESO A DATOS
+            h5.titulo Tienda Harnina
+        div.contenido01
+            div.medio.dadoCatalogo
+                div.dado.d1.informatica
+            div.medio.dadoCatalogo
+                div.dado.d3.harnina
+         div.contenido01
+                    div.menu.s3.menuEjemploCatalogo
+                        h4 New Client
+                        div.etiqueta.s18 First name:
+                        input#clientFirstName(type=text minlength=3 maxlength=50 required placeholder="input your FirstName" title="3 to 50 characters")
+                        div.etiqueta.s18 Last name:
+                        input#clientLastName(type=text  minlength=3  maxlength=50 required placeholder="input your LastName" title="3 to 70 characters")
+script(src="../js/dado.js")
