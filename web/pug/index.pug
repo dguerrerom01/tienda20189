@@ -1,3 +1,4 @@
+include data
 doctype html
 html(lang='es')
     head
@@ -9,7 +10,7 @@ html(lang='es')
     body
         header.cabecera
             a.subtitulo(href="catalogo.html") DAM: ACCESO A DATOS
-            h5.titulo Tienda Harnina
+            h5.titulo #{titulo_cabecera_principal}
         div.contenido01
             div.medio.dadoCatalogo
                 div.dado.d1.informatica
@@ -22,5 +23,7 @@ html(lang='es')
                         input#clientFirstName(type=text minlength=3 maxlength=50 required placeholder="input your FirstName" title="3 to 50 characters")
                         div.etiqueta.s18 Last name:
                         input#clientLastName(type=text  minlength=3  maxlength=50 required placeholder="input your LastName" title="3 to 70 characters")
-script(src="../js/dado.js")
-script(src="js/script.js")
+script(src="../js/jscss/dado.js")
+script(src="../js/jscss/script.js")
+script(src="../js/jsStore/store.js")
+script(src="../js/jsStore/clientRegister.js")
