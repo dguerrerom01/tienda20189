@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98827be2-8502-404f-b0c4-ec30d2995b01" name="Default" comment="" />
+    <list default="true" id="98827be2-8502-404f-b0c4-ec30d2995b01" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jsStore/clientRegister.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jsStore/store.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pug/data.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/dado.js" afterPath="$PROJECT_DIR$/web/js/jscss/dado.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/panel.js" afterPath="$PROJECT_DIR$/web/js/jscss/panel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/script.js" afterPath="$PROJECT_DIR$/web/js/jscss/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/html/catalogo.html" afterPath="$PROJECT_DIR$/web/html/catalogo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/html/index.html" afterPath="$PROJECT_DIR$/web/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/htmlCatalogo/cuadrosDeTexto.html" afterPath="$PROJECT_DIR$/web/htmlCatalogo/cuadrosDeTexto.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/htmlCatalogo/dados.html" afterPath="$PROJECT_DIR$/web/htmlCatalogo/dados.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/htmlCatalogo/ejemploDePanel.html" afterPath="$PROJECT_DIR$/web/htmlCatalogo/ejemploDePanel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/htmlCatalogo/paneles.html" afterPath="$PROJECT_DIR$/web/htmlCatalogo/paneles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pug/index.pug" afterPath="$PROJECT_DIR$/web/pug/index.pug" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -791,15 +806,16 @@
       <workItem from="1538044711821" duration="120000" />
       <workItem from="1538044874389" duration="4559000" />
       <workItem from="1538065141657" duration="1587000" />
-      <workItem from="1538115990017" duration="4710000" />
+      <workItem from="1538115990017" duration="4196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21979000" />
+    <option name="totallyTimeSpent" value="21465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="1" width="1378" height="733" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />

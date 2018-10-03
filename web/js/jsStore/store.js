@@ -24,4 +24,19 @@ STORE.namespace = function(ns_string){
 
     return parent;
 
-}
+};
+STORE.getLimite = function(nodo){
+
+    var limiteInferior = nodo.minLength;
+
+    var limiteSuperior = nodo.maxLength;
+
+    var parametro = {};
+
+    parametro.limiteInferior = limiteInferior;
+
+    parametro.limiteSuperior = limiteSuperior;
+
+    return parametro;
+
+};
