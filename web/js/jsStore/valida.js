@@ -14,89 +14,67 @@ STORE.namespace('STORE.Valida');
 
     STORE.Valida = {
 
-        validarCadenaConEspacio : function(){
+        validarCadenaConEspacio : function(evt){
 
-            parametro.nodo = document.activeElement;
+               parametro.nodo = evt.target;
 
-            if (parametro.nodo.tagName == "INPUT") {
+               parametro.limite = STORE.getLimite(parametro.nodo);
 
-                STORE.assert(typeof parametro.nodo.value == 'string');
-
-                var limite = STORE.getLimite(parametro.nodo);
-
-                parametro.limite = limite;
-
-                var expregular = new RegExp("^([a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]{" +
+               parametro.expregular = new RegExp("^([a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]{" +
                     parametro.limite.limiteInferior  + "," + parametro.limite.limiteSuperior + "})$");
 
-                parametro.expregular = expregular;
+               parametro.mensajeError = "ERROR:Cadena Con Espacio y entre "  +  parametro.limite.limiteInferior + ", " + parametro.limite.limiteSuperior;
 
-                parametro.mensajeError = "ERROR:Cadena Con Espacio y entre "  +  parametro.limite.limiteInferior + ", " + parametro.limite.limiteSuperior;
+              STORE.Valida.validarExpRegular();
+        },
 
-                if (STORE.Valida.validarRexpregular()) {
+        activarSiguiente : function(){
 
-                    //Si es true activar el siguiente
+            for (var i = 0; i < STORE.list_input.length; i++) {
 
-                    for (var i = 0; i < STORE.list_input.length; i++) {
+                if (STORE.list_input[i] === parametro.nodo) {
 
-                        if (STORE.list_input[i] === parametro.nodo) {
+                    if ((i + 1 < STORE.list_input.length)) {
 
-                            if ((i + 1 < STORE.list_input.length)) {
+                        eval("div_" + STORE.list_input[i + 1].id).style.display = '';
 
-                                eval("div_" + STORE.list_input[i + 1].id).style.display = '';
-
-                                STORE.list_input[i + 1].style.backgroundColor = ERROR_COLOR;
-                            }
-                        }
+                        STORE.list_input[i + 1].style.backgroundColor = ERROR_COLOR;
                     }
-
-                    var i = 0;
-
-                    // Comprobar que está todo validado
-
-                    while (i < STORE.list_input.length) {
-
-                        if (STORE.list_input[i].style.backgroundColor === ERROR_COLOR) {
-
-                            i = STORE.list_input.length;
-
-                        }
-                        i++;
-                    }
-
-                    if (i > STORE.list_input.length) {
-
-                        $("submit").style.display = 'none';
-
-                    } else {
-
-                        $("submit").style.display = '';
-
-                    }
-
                 }
-                else   {
-
-                    $("submit").style.display = 'none';
-
-                }
-
             }
-
 
         },
 
+        activarSubmit : function(){
 
-        validarRexpregular : function(){
+            var i = 0;
+
+            while (i < STORE.list_input.length) {
+
+                if (STORE.list_input[i].style.backgroundColor === ERROR_COLOR) {
+
+                    i = STORE.list_input.length;
+
+                }
+                i++;
+            }
+
+            if (i > STORE.list_input.length) {
+
+                parametro.submit.style.display = 'none';
+
+            } else {
+
+                parametro.submit.style.display = '';
+
+            }
+        },
+
+        validarExpRegular : function(){
 
             if(!parametro.expregular.test(parametro.nodo.value)){
 
                 parametro.nodo.style.backgroundColor =  ERROR_COLOR;
-
-                //alert(parametro.nodo.tagName);
-               // alert(event.target);
-
-                //if(parametro.nodo.tagName == "body") {alert("body");}
 
                 parametro.error.innerHTML = parametro.mensajeError;
 
@@ -108,6 +86,10 @@ STORE.namespace('STORE.Valida');
             parametro.nodo.style.backgroundColor = VALIDO_COLOR;
 
             parametro.error.style.display="none";
+
+            STORE.Valida.activarSiguiente();
+
+            STORE.Valida.activarSubmit();
 
             return true;
 

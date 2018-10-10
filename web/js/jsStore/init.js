@@ -5,7 +5,7 @@ STORE.namespace('STORE.list_input');
 
     var form = $("register");
 
-    STORE.list_input = form.getElementsByTagName("input");
+    STORE.list_input = form.querySelectorAll("INPUT");
 
     for (var i = 1; i < STORE.list_input.length; i++) {
 
