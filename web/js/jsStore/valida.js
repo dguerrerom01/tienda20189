@@ -14,7 +14,7 @@ STORE.namespace('STORE.Valida');
 
     STORE.Valida = {
 
-        validarCadenaConEspacio : function(evt){
+        validarLetrasConEspacio : function(evt){
 
                parametro.nodo = evt.target;
 
@@ -28,6 +28,59 @@ STORE.namespace('STORE.Valida');
               STORE.Valida.validarExpRegular();
         },
 
+        validarSexo : function(evt){
+
+            parametro.nodo = evt.target;
+
+            var sexo = ['hombre', 'mujer', 'h', 'm', 'masculino', 'femenino'];
+
+            var iterador = sexo.values();
+
+            var result = false;
+
+            for (let letra of iterador) {
+
+                //alert(parametro.nodo.value);
+
+                if (letra ==  parametro.nodo.value){
+                    result = true;
+                    break;
+                }
+            }
+
+            parametro.mensajeError = "ERROR:Selecciona Hombre o mujer";
+
+
+            if (!result) {
+
+                STORE.Valida.activarError();
+
+                STORE.Valida.activarSubmit();
+
+            } else {
+
+                parametro.nodo.style.backgroundColor = VALIDO_COLOR;
+
+                parametro.error.style.display="none";
+
+                STORE.Valida.activarSiguiente();
+
+                STORE.Valida.activarSubmit();
+
+            }
+
+        },
+
+        activarError : function(){
+
+            parametro.nodo.style.backgroundColor =  ERROR_COLOR;
+
+            parametro.error.innerHTML = parametro.mensajeError;
+
+            parametro.error.style.display="";
+
+        },
+
         activarSiguiente : function(){
 
             for (var i = 0; i < STORE.list_input.length; i++) {
@@ -36,9 +89,14 @@ STORE.namespace('STORE.Valida');
 
                     if ((i + 1 < STORE.list_input.length)) {
 
-                        eval("div_" + STORE.list_input[i + 1].id).style.display = '';
+                        if (!eval("div_" + STORE.list_input[i + 1].id).style.display == ''){
 
-                        STORE.list_input[i + 1].style.backgroundColor = ERROR_COLOR;
+                            eval("div_" + STORE.list_input[i + 1].id).style.display = '';
+
+                            STORE.list_input[i + 1].style.backgroundColor = ERROR_COLOR;
+                        }
+
+
                     }
                 }
             }
@@ -74,16 +132,16 @@ STORE.namespace('STORE.Valida');
 
             if(!parametro.expregular.test(parametro.nodo.value)){
 
-                parametro.nodo.style.backgroundColor =  ERROR_COLOR;
+                STORE.Valida.activarError();
 
-                parametro.error.innerHTML = parametro.mensajeError;
-
-                parametro.error.style.display="";
+                STORE.Valida.activarSubmit();
 
                 return false;
-
             }
+
             parametro.nodo.style.backgroundColor = VALIDO_COLOR;
+
+           // alert("VALIDO_COLOR");
 
             parametro.error.style.display="none";
 

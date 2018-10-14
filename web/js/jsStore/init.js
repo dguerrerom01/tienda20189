@@ -5,11 +5,11 @@ STORE.namespace('STORE.list_input');
 
     var form = $("register");
 
-    STORE.list_input = form.querySelectorAll("INPUT");
+    STORE.list_input = form.querySelectorAll("[data-functioncallback]");
 
     for (var i = 1; i < STORE.list_input.length; i++) {
 
-        eval("div_" + STORE.list_input[i].id).style.display = 'none';
+       eval("div_" + STORE.list_input[i].id).style.display = 'none';
 
     }
 

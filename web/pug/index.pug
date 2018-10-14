@@ -23,10 +23,16 @@ html(lang='es')
                     h4 New Client
                     div#div_clientFirstName
                         label(for='clientFirstName') First name:
-                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "validarCadenaConEspacio" size="24" minlength=3 maxlength=50 required placeholder="input your FirstName" title="3 to 50 characters")
+                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "validarLetrasConEspacio" size="24" minlength=3 maxlength=50 required placeholder="input your FirstName" title="3 to 50 characters")
                     div#div_clientLastName
                         label(for='clientLastName') Last name:
-                        input#clientLastName.etiqueta.s8(type = 'text' data-functioncallback = "validarCadenaConEspacio" minlength=5  maxlength=100 required placeholder="input your LastName" title="3 to 70 characters")
+                        input#clientLastName.etiqueta.s8(type = 'text' data-functioncallback = "validarLetrasConEspacio" minlength=5  maxlength=100 required placeholder="input your LastName" title="3 to 70 characters")
+                    div#div_clientSexo
+                        label(for='clientSexo') Sexo:
+                        select#clientSexo.etiqueta.s8(name='clientSexo' data-functioncallback = "validarSexo")
+                            option(value='') -- Select Sexo --
+                            option(value='m') Hombre
+                            option(value='f') Mujer
                     div#alertaError.etiqueta.errorColor Error:
                     button#submit(type='submit') Enviar
 script(src="../js/jscss/dado.js")

@@ -26,11 +26,19 @@
           <h4>New Client</h4>
           <div id="div_clientFirstName">
             <label for="clientFirstName">First name:</label>
-            <input class="etiqueta s8" id="clientFirstName" type="text" data-functioncallback="validarCadenaConEspacio" size="24" minlength="3" maxlength="50" required placeholder="input your FirstName" title="3 to 50 characters">
+            <input class="etiqueta s8" id="clientFirstName" type="text" data-functioncallback="validarLetrasConEspacio" size="24" minlength="3" maxlength="50" required placeholder="input your FirstName" title="3 to 50 characters">
           </div>
           <div id="div_clientLastName">
             <label for="clientLastName">Last name:</label>
-            <input class="etiqueta s8" id="clientLastName" type="text" data-functioncallback="validarCadenaConEspacio" minlength="5" maxlength="100" required placeholder="input your LastName" title="3 to 70 characters">
+            <input class="etiqueta s8" id="clientLastName" type="text" data-functioncallback="validarLetrasConEspacio" minlength="5" maxlength="100" required placeholder="input your LastName" title="3 to 70 characters">
+          </div>
+          <div id="div_clientSexo">
+            <label for="clientSexo">Sexo:</label>
+            <select class="etiqueta s8" id="clientSexo" name="clientSexo" data-functioncallback="validarSexo">
+              <option value="">-- Select Sexo --</option>
+              <option value="m">Hombre</option>
+              <option value="f">Mujer</option>
+            </select>
           </div>
           <div class="etiqueta errorColor" id="alertaError">Error:</div>
           <button id="submit" type="submit">Enviar</button>
