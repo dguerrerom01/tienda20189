@@ -23,13 +23,13 @@ html(lang='es')
                     h4 New Client
                     div#div_clientFirstName
                         label(for='clientFirstName') First name:
-                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "validarLetrasConEspacio" size="24" minlength=3 maxlength=50 required placeholder="input your FirstName" title="3 to 50 characters")
+                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasConEspacio" size="24" minlength=3 maxlength=50 required placeholder="input your FirstName" title="3 to 50 characters")
                     div#div_clientLastName
                         label(for='clientLastName') Last name:
-                        input#clientLastName.etiqueta.s8(type = 'text' data-functioncallback = "validarLetrasConEspacio" minlength=5  maxlength=100 required placeholder="input your LastName" title="3 to 70 characters")
+                        input#clientLastName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasConEspacio" minlength=5  maxlength=100 required placeholder="input your LastName" title="3 to 70 characters")
                     div#div_clientSexo
                         label(for='clientSexo') Sexo:
-                        select#clientSexo.etiqueta.s8(name='clientSexo' data-functioncallback = "validarSexo")
+                        select#clientSexo.etiqueta.s8(name='clientSexo' data-functioncallback = "ValidarListaValores.validarSexo")
                             option(value='') -- Select Sexo --
                             option(value='m') Hombre
                             option(value='f') Mujer
@@ -38,5 +38,8 @@ html(lang='es')
 script(src="../js/jscss/dado.js")
 script(src="../js/jsStore/constante.js")
 script(src="../js/jsStore/store.js")
-script(src="../js/jsStore/valida.js")
+script(src="../js/jsStore/lista.js")
+script(src="../js/jsStore/error.js")
+script(src="../js/jsStore/submit.js")
+script(src="../js/jsStore/validate.js")
 script(src="../js/jsStore/init.js")

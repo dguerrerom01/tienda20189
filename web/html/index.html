@@ -26,15 +26,15 @@
           <h4>New Client</h4>
           <div id="div_clientFirstName">
             <label for="clientFirstName">First name:</label>
-            <input class="etiqueta s8" id="clientFirstName" type="text" data-functioncallback="validarLetrasConEspacio" size="24" minlength="3" maxlength="50" required placeholder="input your FirstName" title="3 to 50 characters">
+            <input class="etiqueta s8" id="clientFirstName" type="text" data-functioncallback="ValidacionExpresionRegular.validarLetrasConEspacio" size="24" minlength="3" maxlength="50" required placeholder="input your FirstName" title="3 to 50 characters">
           </div>
           <div id="div_clientLastName">
             <label for="clientLastName">Last name:</label>
-            <input class="etiqueta s8" id="clientLastName" type="text" data-functioncallback="validarLetrasConEspacio" minlength="5" maxlength="100" required placeholder="input your LastName" title="3 to 70 characters">
+            <input class="etiqueta s8" id="clientLastName" type="text" data-functioncallback="ValidacionExpresionRegular.validarLetrasConEspacio" minlength="5" maxlength="100" required placeholder="input your LastName" title="3 to 70 characters">
           </div>
           <div id="div_clientSexo">
             <label for="clientSexo">Sexo:</label>
-            <select class="etiqueta s8" id="clientSexo" name="clientSexo" data-functioncallback="validarSexo">
+            <select class="etiqueta s8" id="clientSexo" name="clientSexo" data-functioncallback="ValidarListaValores.validarSexo">
               <option value="">-- Select Sexo --</option>
               <option value="m">Hombre</option>
               <option value="f">Mujer</option>
@@ -50,5 +50,8 @@
 <script src="../js/jscss/dado.js"></script>
 <script src="../js/jsStore/constante.js"></script>
 <script src="../js/jsStore/store.js"></script>
-<script src="../js/jsStore/valida.js"></script>
+<script src="../js/jsStore/lista.js"></script>
+<script src="../js/jsStore/error.js"></script>
+<script src="../js/jsStore/submit.js"></script>
+<script src="../js/jsStore/validate.js"></script>
 <script src="../js/jsStore/init.js"></script>
