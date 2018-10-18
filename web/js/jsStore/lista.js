@@ -33,3 +33,4 @@ STORE.namespace('STORE.Lista');
     }
 
 })(window)
+

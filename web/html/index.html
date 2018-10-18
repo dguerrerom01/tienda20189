@@ -26,7 +26,7 @@
           <h4>New Client</h4>
           <div id="div_clientFirstName">
             <label for="clientFirstName">First name:</label>
-            <input class="etiqueta s8" id="clientFirstName" type="text" data-functioncallback="ValidacionExpresionRegular.validarLetrasConEspacio" size="24" minlength="3" maxlength="50" required placeholder="input your FirstName" title="3 to 50 characters">
+            <input class="etiqueta s8" id="clientFirstName" type="text" data-functioncallback="ValidacionExpresionRegular.validarLetrasSinEspacio" size="24" required placeholder="input your FirstName" title="3 to 50 characters">
           </div>
           <div id="div_clientLastName">
             <label for="clientLastName">Last name:</label>
@@ -40,6 +40,10 @@
               <option value="f">Mujer</option>
             </select>
           </div>
+          <div id="div_clientImage">
+            <label for="clientImage">Elije tu foto</label>
+            <input class="etiqueta s8" id="clientImage" type="file" data-functioncallback="ValidarFicheroName.validarImagenName" required accept="image/png, image/jpeg" placeholder="input your Avatar" title="3 to 120 characters">
+          </div>
           <div class="etiqueta errorColor" id="alertaError">Error:</div>
           <button id="submit" type="submit">Enviar</button>
         </div>
@@ -51,6 +55,7 @@
 <script src="../js/jsStore/constante.js"></script>
 <script src="../js/jsStore/store.js"></script>
 <script src="../js/jsStore/lista.js"></script>
+<script src="../js/jsStore/file.js"></script>
 <script src="../js/jsStore/error.js"></script>
 <script src="../js/jsStore/submit.js"></script>
 <script src="../js/jsStore/validate.js"></script>

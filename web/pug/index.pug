@@ -23,7 +23,7 @@ html(lang='es')
                     h4 New Client
                     div#div_clientFirstName
                         label(for='clientFirstName') First name:
-                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasConEspacio" size="24" minlength=3 maxlength=50 required placeholder="input your FirstName" title="3 to 50 characters")
+                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasSinEspacio" size="24" required placeholder="input your FirstName" title="3 to 50 characters")
                     div#div_clientLastName
                         label(for='clientLastName') Last name:
                         input#clientLastName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasConEspacio" minlength=5  maxlength=100 required placeholder="input your LastName" title="3 to 70 characters")
@@ -33,12 +33,16 @@ html(lang='es')
                             option(value='') -- Select Sexo --
                             option(value='m') Hombre
                             option(value='f') Mujer
+                    div#div_clientImage
+                          label(for='clientImage') Elije tu foto
+                          input#clientImage.etiqueta.s8(type = 'file' data-functioncallback = "ValidarFicheroName.validarImagenName" required  accept="image/png, image/jpeg" placeholder="input your Avatar" title="3 to 120 characters")
                     div#alertaError.etiqueta.errorColor Error:
                     button#submit(type='submit') Enviar
 script(src="../js/jscss/dado.js")
 script(src="../js/jsStore/constante.js")
 script(src="../js/jsStore/store.js")
 script(src="../js/jsStore/lista.js")
+script(src="../js/jsStore/file.js")
 script(src="../js/jsStore/error.js")
 script(src="../js/jsStore/submit.js")
 script(src="../js/jsStore/validate.js")

@@ -45,6 +45,8 @@ STORE.getLimite = function(nodo){
 
 };
 
+
+
 STORE.assert = function(condition, message) {
     if (!condition) {
         message = message || "Assertion failed";

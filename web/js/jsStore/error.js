@@ -10,6 +10,8 @@ STORE.namespace('STORE.Error');
 
     STORE.Error = {
 
+        COLOR : 'rgb(200, 128, 128)',
+
         off  : function(){
             error.style.display = "none";
         },
@@ -20,8 +22,9 @@ STORE.namespace('STORE.Error');
 
         set_message : function(message){
             error.innerHTML = message;
-        },
-        COLOR : 'rgb(200, 128, 128)'
+        }
+
+
 
     }
 
