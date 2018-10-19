@@ -10,27 +10,23 @@ STORE.namespace('STORE.Error');
 
     STORE.Error = {
 
-        COLOR : 'rgb(200, 128, 128)',
+        on  : function(){
+            error.style.display = "";
+        },
 
         off  : function(){
             error.style.display = "none";
         },
 
-        on  : function(){
-            error.style.display = "";
-        },
-
         set_message : function(message){
             error.innerHTML = message;
+        },
+
+        get_colorError : function(){
+
+            return STORE.Color.colorError;
         }
-
-
-
     }
-
-
-
-
 
 })(window)
 

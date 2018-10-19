@@ -18,7 +18,7 @@ STORE.namespace('STORE.ValidacionUtil');
 
                 parametro.patron += "{" + parametro.limite.limiteInferior  + "," + parametro.limite.limiteSuperior + "})$";
 
-                parametro.mensajeError +=  " , entre"  + parametro.limite.limiteInferior + ", " + parametro.limite.limiteSuperior;
+                parametro.mensajeError +=  " ; entre "  + parametro.limite.limiteInferior + ", " + parametro.limite.limiteSuperior;
 
             } else {
 
@@ -59,7 +59,7 @@ STORE.namespace('STORE.ValidacionUtil');
 
             if (valido){
 
-                parametro.nodo.style.backgroundColor = VALIDO_COLOR;
+                parametro.nodo.style.backgroundColor = STORE.Color.colorValido;
 
                 STORE.Error.off();
 
@@ -71,7 +71,7 @@ STORE.namespace('STORE.ValidacionUtil');
 
                 STORE.Error.set_message(parametro.mensajeError);
 
-                parametro.nodo.style.backgroundColor = STORE.Error.COLOR;
+                parametro.nodo.style.backgroundColor = STORE.Error.get_colorError();
 
                 STORE.Error.on();
 
@@ -98,7 +98,7 @@ STORE.namespace('STORE.ValidacionExpresionRegular');
 
             parametro.patron = "^([a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]";
 
-            parametro.mensajeError = "ERROR:Letras con Espacio ";
+            parametro.mensajeError = "ERROR: Letras con Espacio ";
 
             STORE.ValidacionUtil.addLimitePatron(parametro);
 
@@ -113,7 +113,7 @@ STORE.namespace('STORE.ValidacionExpresionRegular');
 
             parametro.patron =  "^([a-zA-ZñÑáéíóúÁÉÍÓÚ]";
 
-            parametro.mensajeError = "ERROR:Letras sin Espacio ";
+            parametro.mensajeError = "ERROR: Letras sin Espacio ";
 
             STORE.ValidacionUtil.addLimitePatron(parametro);
 
@@ -126,7 +126,7 @@ STORE.namespace('STORE.ValidacionExpresionRegular');
 
 })(window)
 
-//STORE.namespace('STORE.ValidacionExpresionRegularLimite');
+//STORE.namespace('STORE.ValidacionExpresionRegularLimite'); herencia paralela
 
 STORE.namespace('STORE.ValidarListaValores');
 (function(g) {
@@ -178,20 +178,26 @@ STORE.namespace('STORE.ValidarFicheroName');
 
                 parametro.text = parametro.nodo.value;
 
-               if( STORE.ValidacionUtil.valorarConsecuencia(STORE.ValidacionUtil.validarExpRegular(parametro),parametro))
+
+
+               if( STORE.ValidacionUtil.validarExpRegular(parametro))
                {
-                   parametro.patron = "^([a-zA-ZñÑáéíóúÁÉÍÓÚ0_9\\s]";
+                   parametro.patron = "^([a-zA-ZñÑáéíóúÁÉÍÓÚ0_9\\s])";
 
                    parametro.mensajeError = "ERROR:Letras y numeros con Espacio ";
 
-                   parametro.text = STORE.File.getFileNameFromURI(parametro.node.value);
+                   parametro.text = STORE.File.getFileNameFromURI(parametro.nodo.value);
 
-                   STORE.ValidacionUtil.valorarConsecuencia(STORE.ValidacionUtil.validarExpRegular(parametro),parametro);
+                   STORE.ValidacionUtil.valorarConsecuencia(STORE.ValidacionUtil.validarExpRegular(parametro),parametro);  // STORE.ValidacionUtil.valorarConsecuencia(("^([a-zA-ZñÑáéíóúÁÉÍÓÚ0_9\\s])").test(STORE.File.getFileNameFromURI(parametro.nodo.value)),parametro);
+               }
+               else {
+
+                   STORE.ValidacionUtil.valorarConsecuencia(false,parametro);
                }
 
             } else {
 
-                STORE.ValidacionUtil.valorarConsecuencia(false,parametro);
+                   STORE.ValidacionUtil.valorarConsecuencia(false,parametro);
             }
         }
 

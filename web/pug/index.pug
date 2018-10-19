@@ -22,25 +22,25 @@ html(lang='es')
                 div.menu.s3.caja03
                     h4 New Client
                     div#div_clientFirstName
-                        label(for='clientFirstName') First name:
-                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasSinEspacio" size="24" required placeholder="input your FirstName" title="3 to 50 characters")
+                        label(for='clientFirstName').labelInput First name:
+                        input#clientFirstName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasSinEspacio" size="24" minlength=3  maxlength=80 required placeholder="input your FirstName" title="3 to 50 characters")
                     div#div_clientLastName
-                        label(for='clientLastName') Last name:
+                        label(for='clientLastName').labelInput Last name:
                         input#clientLastName.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarLetrasConEspacio" minlength=5  maxlength=100 required placeholder="input your LastName" title="3 to 70 characters")
                     div#div_clientSexo
-                        label(for='clientSexo') Sexo:
+                        label(for='clientSexo').labelInput Sexo:
                         select#clientSexo.etiqueta.s8(name='clientSexo' data-functioncallback = "ValidarListaValores.validarSexo")
                             option(value='') -- Select Sexo --
                             option(value='m') Hombre
                             option(value='f') Mujer
                     div#div_clientImage
-                          label(for='clientImage') Elije tu foto
+                          label(for='clientImage').labelInput Elije tu foto
                           input#clientImage.etiqueta.s8(type = 'file' data-functioncallback = "ValidarFicheroName.validarImagenName" required  accept="image/png, image/jpeg" placeholder="input your Avatar" title="3 to 120 characters")
                     div#alertaError.etiqueta.errorColor Error:
                     button#submit(type='submit') Enviar
 script(src="../js/jscss/dado.js")
-script(src="../js/jsStore/constante.js")
 script(src="../js/jsStore/store.js")
+script(src="../js/jsStore/color.js")
 script(src="../js/jsStore/lista.js")
 script(src="../js/jsStore/file.js")
 script(src="../js/jsStore/error.js")

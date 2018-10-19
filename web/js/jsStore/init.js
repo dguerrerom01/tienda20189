@@ -24,7 +24,8 @@ STORE.namespace('STORE.list_input');
     for (var i = 0; i < STORE.list_input.length; i++) {
 
         STORE.list_input[i].addEventListener("input",eval("STORE." + STORE.list_input[i].dataset.functioncallback),false);
-        STORE.list_input[i].style.backgroundColor = STORE.Error.COLOR;
+        STORE.list_input[i].style.backgroundColor = STORE.Error.get_colorError();
+        //STORE.list_input[i].style.color = "black";
     }
 
 }) (window,undefined);

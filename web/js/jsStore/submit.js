@@ -21,7 +21,7 @@ STORE.namespace('STORE.Submit');
 
             while (i < STORE.list_input.length) {
 
-                if (STORE.list_input[i].style.backgroundColor === STORE.Error.COLOR) {
+                if (STORE.list_input[i].style.backgroundColor === STORE.Error.get_colorError()) {
 
                     i = STORE.list_input.length;
 
