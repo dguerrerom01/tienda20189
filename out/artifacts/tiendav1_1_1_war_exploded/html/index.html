@@ -21,16 +21,35 @@
       </div>
     </div>
     <div class="contenido01">
-      <form id="register" method="POST" action="/register">
+      <form id="client_register" method="get" action="/pepe">
         <div class="menu s3 caja03">
           <h4>New Client</h4>
           <div id="div_clientFirstName">
-            <label for="clientFirstName">First name:</label>
-            <input class="etiqueta s8" id="clientFirstName" type="text" data-functioncallback="validarCadenaConEspacio" size="24" minlength="3" maxlength="50" required placeholder="input your FirstName" title="3 to 50 characters">
+            <label class="labelInput" for="clientFirstName">First name:</label>
+            <input class="etiqueta s8" id="clientFirstName" name="clientFirstName" type="text" data-functioncallback="ValidacionExpresionRegular.validarLetrasSinEspacio" size="24" minlength="3" maxlength="80" required placeholder="input your FirstName" title="3 to 50 characters">
           </div>
           <div id="div_clientLastName">
-            <label for="clientLastName">Last name:</label>
-            <input class="etiqueta s8" id="clientLastName" type="text" data-functioncallback="validarCadenaConEspacio" minlength="5" maxlength="100" required placeholder="input your LastName" title="3 to 70 characters">
+            <label class="labelInput" for="clientLastName">Last name:</label>
+            <input class="etiqueta s8" id="clientLastName" type="text" data-functioncallback="ValidacionExpresionRegular.validarLetrasConEspacio" minlength="5" maxlength="100" required placeholder="input your LastName" title="3 to 70 characters">
+          </div>
+          <div id="div_clientCP">
+            <label class="labelInput" for="clientCP">C P:</label>
+            <input class="etiqueta s8" id="clientCP" type="text" data-functioncallback="ValidacionExpresionRegular.validarCodigoPostal" required placeholder="input your cp" title="5 characters">
+          </div>
+          <div id="div_clientSexo">
+            <label class="labelInput" for="clientSexo">Sexo:</label>
+            <select class="etiqueta s8 file" id="clientSexo" name="clientSexo" data-functioncallback="ValidarListaValores.validarSexo">
+              <option value="">-- Select Sexo --</option>
+              <option value="m">Hombre</option>
+              <option value="f">Mujer</option>
+            </select>
+          </div>
+          <div class="fileinputs etiqueta s8" id="div_clientImage">
+            <input class="etiqueta s8 file" id="clientImage" type="file" data-functioncallback="ValidarFicheroName.validarImagenName" required accept="image/png, image/jpeg" placeholder="input your Avatar" title="3 to 120 characters">
+            <div class="fakefile">
+              <label class="labelInput" for="clientImage">Elije tu foto</label>
+              <input id="idFile">
+            </div>
           </div>
           <div class="etiqueta errorColor" id="alertaError">Error:</div>
           <button id="submit" type="submit">Enviar</button>
@@ -40,8 +59,11 @@
   </body>
 </html>
 <script src="../js/jscss/dado.js"></script>
-<script src="../js/jscss/script.js"></script>
 <script src="../js/jsStore/store.js"></script>
-<script src="../js/jsStore/constante.js"></script>
-<script src="../js/jsStore/valida.js"></script>
-<script src="../js/jsStore/ClientRegisterFormInputEventValida.js"></script>
+<script src="../js/jsStore/color.js"></script>
+<script src="../js/jsStore/lista.js"></script>
+<script src="../js/jsStore/file.js"></script>
+<script src="../js/jsStore/error.js"></script>
+<script src="../js/jsStore/submit.js"></script>
+<script src="../js/jsStore/validate.js"></script>
+<script src="../js/jsStore/init.js"></script>

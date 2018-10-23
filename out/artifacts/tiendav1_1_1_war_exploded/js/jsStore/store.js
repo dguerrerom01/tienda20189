@@ -45,8 +45,14 @@ STORE.getLimite = function(nodo){
 
 };
 
-STORE.assert = function (precondiction){
 
-    if(!precondiction) {return false}
-        else return true;
+
+STORE.assert = function(condition, message) {
+    if (!condition) {
+        message = message || "Assertion failed";
+        if (typeof Error !== "undefined") {
+            throw new Error(message);
+        }
+        throw message; // Fallback
+    }
 }
