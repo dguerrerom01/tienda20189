@@ -30,6 +30,15 @@ html(lang='es')
                     div#div_clientCP
                         label(for='clientCP').labelInput C P:
                         input#clientCP.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarCodigoPostal"  required placeholder="input your cp" title="5 characters")
+                    div#div_emailCliente
+                        label(for='emailCliente') Email:
+                        input#emailCliente.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarEmail" required placeholder="input your Email" title="Email")
+                    div#div_dniCliente
+                        label(for='dniCliente') dni:
+                        input#dniCliente.etiqueta.s8(type = 'text' data-functioncallback = "ValidacionExpresionRegular.validarDni" required placeholder="input your dni" title="dni")
+                    div#div_password
+                        label(for='password') Password:
+                        input#password.etiqueta.s8(type = 'password' placeholder="Contraseña" data-functioncallback = 'ValidacionExpresionRegular.validarPassword')
                     div#div_clientSexo
                         label(for='clientSexo').labelInput Sexo:
                         select#clientSexo.etiqueta.s8.file(name='clientSexo' data-functioncallback = "ValidarListaValores.validarSexo")
